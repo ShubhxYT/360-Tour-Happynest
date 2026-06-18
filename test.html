@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<style>
+body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000}
+#panorama{width:100%;height:100%}
+.pnlm-about-msg,.pnlm-load-box,.pnlm-load-button{display:none!important}
+#vr-flash{position:fixed;inset:0;pointer-events:none;z-index:9999;background:#fff;opacity:0;transition:opacity 0.15s}
+#vr-flash.on{opacity:1;transition:opacity 0s}
+#vr-pill{position:fixed;display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:20px;font-family:system-ui,sans-serif;font-size:13px;z-index:10000;pointer-events:none;transition:opacity 0.5s;background:rgba(0,0,0,0.75);color:#fff;bottom:12px;right:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#vr-pill.vr-pill-off{opacity:0}
+#vr-pill.vr-pill-done{opacity:0;transition:opacity 0.8s ease 1s}
+.vr-pill-spin{width:12px;height:12px;border:2px solid rgba(255,255,255,0.3);border-top-color:#4fc3f7;border-radius:50%;animation:vr-spin 0.7s linear infinite}
+@keyframes vr-spin{to{transform:rotate(360deg)}}
+.nadir-logo{background:none!important;border:none!important;box-shadow:none!important;cursor:default!important;filter:none!important}
+.nadir-logo::after{display:none!important}
+.nadir-logo:hover{filter:none!important}
+.nadir-logo img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;object-fit:cover;pointer-events:none;will-change:transform}
+</style>
+</head>
+<body>
+<div id="panorama"></div>
+<div id="vr-flash"></div>
+<div id="vr-pill" class="vr-pill-off"><span class="vr-pill-spin"></span><span class="vr-pill-text"></span></div>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+Promise.all([
+  fetch('tour.json').then(r=>r.json()),
+  fetch('config.json').then(r=>r.json())
+]).then(function(results){
+  var tour=results[0],cfg=results[1];
+
+  // viewport
+  var vp=cfg.appearance.viewport;
+  var meta=document.createElement('meta');
+  meta.name='viewport';
+  meta.content=[vp.width?'width='+vp.width:'',vp.initialScale?'initial-scale='+vp.initialScale:'',vp.userScalable===false?'user-scalable=no':''].filter(Boolean).join(',');
+  document.head.appendChild(meta);
+
+  // hotspot CSS
+  var h=cfg.appearance.hotspots;
+  var mid=Math.round(h.pulseRadius/2);
+  var alpha=h.pulseColor.replace(/[\d.]+\)$/,'0.15)');
+  var s=document.createElement('style');
+  s.textContent=
+    '.pnlm-hotspot-base{will-change:transform;filter:drop-shadow(0 0 5px '+h.glowColor+')}'+
+    '.pnlm-hotspot-base::after{content:"";position:absolute;inset:-3px;border-radius:50%;pointer-events:none;animation:pulse-ring '+h.pulseDuration+' infinite cubic-bezier(0.25,0,0,1)}'+
+    '.pnlm-hotspot-base:hover{filter:drop-shadow(0 0 10px '+h.glowHoverColor+')}'+
+    '@keyframes pulse-ring{'+
+    '0%{box-shadow:0 0 0 0px '+h.pulseColor+'}'+
+    '50%{box-shadow:0 0 0 '+mid+'px '+alpha+'}'+
+    '100%{box-shadow:0 0 0 '+h.pulseRadius+'px transparent}}';
+  document.head.appendChild(s);
+
+  // pannellum + hotspot scaling
+  var SCALE=h.scale,HOVER_SCALE=h.hoverScale;
+  var v=pannellum.viewer('panorama',tour);
+
+  function stripScale(t){
+    var i=t.indexOf(' scale(');
+    return i===-1?t:t.substring(0,i);
+  }
+  function applyScale(el,s){
+    var base=el.getAttribute('data-base-transform');
+    if(base) el.style.transform=base+' scale('+s+')';
+  }
+  function handleStyleChange(el){
+    if(el._scaling||!el.classList) return;
+    var t=el.style.transform||'';
+    if(!t) return;
+    if(!el.dataset.scaled){
+      el._scaling=true;
+      el.dataset.scaled='1';
+      el.setAttribute('data-base-transform',stripScale(t));
+      el.addEventListener('mouseenter',function(){applyScale(el,HOVER_SCALE)});
+      el.addEventListener('mouseleave',function(){applyScale(el,SCALE)});
+      el.addEventListener('touchstart',function(){applyScale(el,HOVER_SCALE)},{passive:true});
+      el.addEventListener('touchend',function(){applyScale(el,SCALE)},{passive:true});
+      el.style.transform=el.getAttribute('data-base-transform')+' scale('+SCALE+')';
+      el._scaling=false;
+    }else if(t.indexOf('scale(')===-1){
+      el._scaling=true;
+      el.setAttribute('data-base-transform',t);
+      el.style.transform=t+' scale('+SCALE+')';
+      el._scaling=false;
+    }
+  }
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      if(m.type==='attributes'&&m.attributeName==='style')
+        handleStyleChange(m.target);
+    });
+  }).observe(document.getElementById('panorama'),{subtree:true,attributes:true,attributeFilter:['style']});
+  v.on('scenechange',function(){
+    document.querySelectorAll('.pnlm-hotspot-base').forEach(function(e){
+      delete e.dataset.scaled;
+      e.removeAttribute('data-base-transform');
+    });
+  });
+
+  // ── Preload-on-scene-arrival with pill progress, flash transition ──
+  var TRANS=cfg.transitions||{};
+  var preloaded={};
+  var currentScene=tour.default.firstScene;
+
+  var sceneUrl={};
+  Object.keys(tour.scenes).forEach(function(k){
+    sceneUrl[k]=tour.scenes[k].panorama;
+  });
+
+  // pill
+  var pill=document.getElementById('vr-pill');
+  var pillSpinner=pill.querySelector('.vr-pill-spin');
+  var pillText=pill.querySelector('.vr-pill-text');
+  var pillTimeout=null;
+
+  function showPill(loaded,total){
+    if(pillTimeout){clearTimeout(pillTimeout);pillTimeout=null;}
+    pill.classList.remove('vr-pill-done','vr-pill-off');
+    pillSpinner.style.display='';
+    pillText.textContent=loaded+' / '+total;
+  }
+  function pillDone(total){
+    pillSpinner.style.display='none';
+    pillText.textContent=total+' / '+total;
+    pillTimeout=setTimeout(function(){pill.classList.add('vr-pill-done')},TRANS.pill&&TRANS.pill.fadeDelay||1000);
+  }
+  function hidePill(){
+    if(pillTimeout){clearTimeout(pillTimeout);pillTimeout=null;}
+    pill.classList.add('vr-pill-off');
+  }
+
+  function preloadSceneTargets(sceneId){
+    var spots=(tour.scenes[sceneId]||{}).hotSpots||[];
+    var urls=[];
+    spots.forEach(function(hs){
+      if(hs.type==='scene'&&hs.sceneId){
+        var url=sceneUrl[hs.sceneId];
+        if(url&&!preloaded[url]) urls.push(url);
+      }
+    });
+    if(!urls.length) return;
+    var total=urls.length,loaded=0;
+    showPill(0,total);
+    urls.forEach(function(url){
+      var img=new Image();
+      img.onload=img.onerror=function(){
+        preloaded[url]=true;
+        loaded++;
+        if(loaded===total) pillDone(total); else showPill(loaded,total);
+      };
+      img.src=url;
+    });
+  }
+
+  // flash transition
+  var flashEl=document.getElementById('vr-flash');
+  function flash(){
+    if(flashEl.classList.contains('on')) return;
+    flashEl.classList.add('on');
+    requestAnimationFrame(function(){
+      flashEl.classList.remove('on');
+    });
+  }
+
+  v.on('load',function(){
+    preloadSceneTargets(currentScene);
+  });
+
+  v.on('scenechange',function(id){
+    currentScene=id;
+    hidePill();
+    flash();
+  });
+
+  // kick off first scene
+  preloadSceneTargets(currentScene);
+
+  // ── Nadir logo (in‑scene, scales with zoom) ──
+  var NADIR=cfg.nadirLogo||{};
+
+  function computeNadirSize(){
+    var vw=window.innerWidth;
+    var pct=NADIR.viewportPercent||12;
+    var min=NADIR.minSize||60;
+    var max=NADIR.maxSize||200;
+    return Math.round(Math.max(min,Math.min(max,vw*pct/100)));
+  }
+
+  // add nadir hotspot to every scene
+  Object.keys(tour.scenes).forEach(function(sid){
+    try{v.addHotSpot({pitch:-90,yaw:0,type:'info',cssClass:'nadir-logo',scale:true},sid)}catch(e){}
+  });
+
+  // inject logo img whenever a .nadir-logo hotspot appears in DOM
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType!==1||!n.classList||!n.classList.contains('nadir-logo')||n.classList.contains('nadir-done')) return;
+        n.classList.add('nadir-done');
+        var img=document.createElement('img');
+        img.src=NADIR.src||'logo.png';
+        var sz=computeNadirSize();
+        img.width=sz;
+        img.height=sz;
+        img.style.opacity=NADIR.opacity!=null?NADIR.opacity:0.75;
+        img.style.filter='drop-shadow(0 2px 8px rgba(0,0,0,0.45))';
+        n.appendChild(img);
+        updateNadirScale();
+      });
+    });
+  }).observe(document.getElementById('panorama'),{childList:true,subtree:true});
+
+  v.on('load',function(){
+    updateNadirScale();
+  });
+
+  v.on('zoomchange',function(){
+    updateNadirScale();
+  });
+
+  window.addEventListener('resize',function(){
+    var sz=computeNadirSize();
+    document.querySelectorAll('.nadir-logo img').forEach(function(img){
+      img.width=sz;
+      img.height=sz;
+    });
+    updateNadirScale();
+  });
+
+  function updateNadirScale(){
+    var hfov=v.getHfov();
+    var baseHfov=(tour.scenes[currentScene]||{}).hfov||tour.default.hfov||100;
+    var s=baseHfov/hfov;
+    var img=document.querySelector('.nadir-logo img');
+    if(img) img.style.transform='translate(-50%,-50%) scale('+s+')';
+  }
+});
+</script>
+</body>
+</html>

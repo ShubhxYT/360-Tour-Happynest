@@ -1,0 +1,41 @@
+{
+  "appearance": {
+    "viewport": {
+      "width": "device-width",
+      "initialScale": 1,
+      "userScalable": false
+    },
+    "hotspots": {
+      "scale": 1,
+      "hoverScale": 1.6,
+      "glowColor": "rgba(0,180,255,0.55)",
+      "glowHoverColor": "rgba(0,180,255,0.85)",
+      "pulseColor": "rgba(0,180,255,0.6)",
+      "pulseDuration": "1.8s",
+      "pulseRadius": 14
+    }
+  },
+  "transitions": {
+    "preload": "onscene",
+    "effect": "flash",
+    "duration": 300,
+    "hideSpinner": false,
+    "pill": {
+      "bg": "rgba(0,0,0,0.75)",
+      "fg": "#fff",
+      "accent": "#4fc3f7",
+      "bottom": 12,
+      "right": 12,
+      "fadeDelay": 1000
+    }
+  },
+  "nadirLogo": {
+    "enabled": true,
+    "src": "logo.png",
+    "viewportPercent": 30,
+    "minSize": 40,
+    "maxSize": 400,
+    "opacity": 1,
+    "bottom": 20
+  }
+}
