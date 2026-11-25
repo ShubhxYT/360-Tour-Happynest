@@ -9,1120 +9,1441 @@
     "disableKeyboardCtrl": false,
     "keyboardZoom": true,
     "compass": false,
-    "orientationOnByDefault": false
+    "orientationOnByDefault": false,
+    "title": "HappyNest Blanc Belle"
   },
   "scenes": {
     "FirstFloorDarkGreyRoom": {
-      "panorama": "assets/FirstFloorDarkGreyRoom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Grey Room (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorDarkGreyRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorDarkGreyRoom"
+      },
       "hotSpots": [
         {
           "pitch": -1.7009649150921364,
           "yaw": -129.57145026647106,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomTwo",
-          "text": "FirstFloorDrawingRoomTwo"
+          "text": "Drawing Room 2 (1st floor)"
         },
         {
           "pitch": -4.17640725188451,
           "yaw": -45.000711818112755,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoomWashroom",
-          "text": "FirstFloorDarkGreyRoomWashroom"
+          "text": "Dark Grey Room Bathroom (1st floor)"
         },
         {
           "pitch": -0.08323431300798642,
           "yaw": 79.68797688194465,
           "type": "scene",
           "sceneId": "FirstFloorBalconyOne",
-          "text": "FirstFloorBalconyOne"
+          "text": "Balcony 1 (1st floor)"
         },
         {
           "pitch": -6.597747947834455,
           "yaw": 141.48599037788827,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         }
       ]
     },
     "FirstFloorAquaBlueRoomWashroom": {
-      "panorama": "assets/FirstFloorAquaBlueRoomWashroom.jpg",
-      "type": "equirectangular",
+      "title": "Aqua Blue Room Bathroom (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorAquaBlueRoomWashroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorAquaBlueRoomWashroom"
+      },
       "hotSpots": [
         {
           "pitch": -7.472949590979314,
           "yaw": -70.23228067877727,
           "type": "scene",
           "sceneId": "FirstFloorAquaBlueRoom",
-          "text": "FirstFloorAquaBlueRoom"
+          "text": "Aqua Blue Room (1st floor)"
         }
       ]
     },
     "FirstFloorAquaBlueRoom": {
-      "panorama": "assets/FirstFloorAquaBlueRoom.jpg",
-      "type": "equirectangular",
+      "title": "Aqua Blue Room (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorAquaBlueRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorAquaBlueRoom"
+      },
       "hotSpots": [
         {
           "pitch": -7.252545199036383,
           "yaw": 136.12840164242786,
           "type": "scene",
           "sceneId": "FirstFloorAquaBlueRoomWashroom",
-          "text": "FirstFloorAquaBlueRoomWashroom"
+          "text": "Aqua Blue Room Bathroom (1st floor)"
         },
         {
           "pitch": 0.13846366683812147,
           "yaw": -65.25196387017826,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         }
       ]
     },
     "FirstFloorBalconyOne": {
-      "panorama": "assets/FirstFloorBalconyOne.jpg",
-      "type": "equirectangular",
+      "title": "Balcony 1 (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorBalconyOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorBalconyOne"
+      },
       "hotSpots": [
         {
           "pitch": -1.4967295848428828,
           "yaw": -50.942305283966384,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         },
         {
           "pitch": 1.5695660434179346,
           "yaw": -27.352248939477086,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomOne",
-          "text": "FirstFloorDrawingRoomOne"
+          "text": "Drawing Room 1 (1st floor)"
         },
         {
           "pitch": 2.644388164023473,
           "yaw": 15.367055494179326,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         }
       ]
     },
     "FirstFloorBalconyTwo": {
-      "panorama": "assets/FirstFloorBalconyTwo.jpg",
-      "type": "equirectangular",
+      "title": "Balcony 2 (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorBalconyTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorBalconyTwo"
+      },
       "hotSpots": [
         {
           "pitch": 1.494773233417444,
           "yaw": 121.80073614464243,
           "type": "scene",
           "sceneId": "FirstFloorBalconyOne",
-          "text": "FirstFloorBalconyOne"
+          "text": "Balcony 1 (1st floor)"
         },
         {
           "pitch": -0.45722003735640027,
           "yaw": -23.831003745595858,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomOne",
-          "text": "FirstFloorDrawingRoomOne"
+          "text": "Drawing Room 1 (1st floor)"
         },
         {
           "pitch": -0.5833035310347239,
           "yaw": 49.19616877071009,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         }
       ]
     },
     "FirstFloorDarkGreyRoomWashroom": {
-      "panorama": "assets/FirstFloorDarkGreyRoomWashroom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Grey Room Bathroom (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorDarkGreyRoomWashroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorDarkGreyRoomWashroom"
+      },
       "hotSpots": [
         {
           "pitch": -12.282379508760531,
           "yaw": -172.41130465065993,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         }
       ]
     },
     "FirstFloorDrawingRoomTwo": {
-      "panorama": "assets/FirstFloorDrawingRoomTwo.jpg",
-      "type": "equirectangular",
+      "title": "Drawing Room 2 (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorDrawingRoomTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorDrawingRoomTwo"
+      },
       "hotSpots": [
         {
           "pitch": 1.8437838235908004,
           "yaw": 142.1441564072873,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         },
         {
           "pitch": -4.4827589593053085,
           "yaw": -158.56960014081486,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomOne",
-          "text": "FirstFloorDrawingRoomOne"
+          "text": "Drawing Room 1 (1st floor)"
         },
         {
           "pitch": -1.3929452057510423,
           "yaw": -35.546385756574296,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": 1.5647703461655833,
           "yaw": -26.68708441283801,
           "type": "scene",
           "sceneId": "PeachRoom",
-          "text": "PeachRoom"
+          "text": "Peach Room"
         },
         {
           "pitch": 1.0799387773155578,
           "yaw": -43.542231056414494,
           "type": "scene",
           "sceneId": "DarkBlueRoom",
-          "text": "DarkBlueRoom"
+          "text": "Dark Blue Room"
         },
         {
           "pitch": 0.33413309337599245,
           "yaw": -176.15112996093333,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "tKCc5PMy"
+          "text": "Balcony 2 (1st floor)"
         },
         {
           "pitch": 19.65419108604621,
           "yaw": -0.673447644004316,
           "type": "scene",
           "sceneId": "RoofTwo",
-          "text": "Roof"
+          "text": "Roof 2"
         }
       ]
     },
     "FirstFloorDrawingRoomOne": {
-      "panorama": "assets/FirstFloorDrawingRoomOne.jpg",
-      "type": "equirectangular",
+      "title": "Drawing Room 1 (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorDrawingRoomOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorDrawingRoomOne"
+      },
       "hotSpots": [
         {
           "pitch": -2.6146578470355712,
           "yaw": 87.29853365201237,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         },
         {
           "pitch": 0.0911478559312096,
           "yaw": 70.86933944631939,
           "type": "scene",
           "sceneId": "FirstFloorBalconyOne",
-          "text": "FirstFloorBalconyOne"
+          "text": "Balcony 1 (1st floor)"
         },
         {
           "pitch": -0.5031733574927686,
           "yaw": 26.642120247283504,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         },
         {
           "pitch": -4.153986439906746,
           "yaw": -23.53707292791199,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomTwo",
-          "text": "FirstFloorDrawingRoomTwo"
+          "text": "Drawing Room 2 (1st floor)"
         },
         {
           "pitch": -0.43833208087429776,
           "yaw": -58.84347177234273,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": 6.2393199417217895,
           "yaw": -35.54533487715293,
           "type": "scene",
           "sceneId": "RoofTwo",
-          "text": "Roof"
+          "text": "Roof 2"
         }
       ]
     },
     "FirstFloorStairs": {
-      "panorama": "assets/FirstFloorStairs.jpg",
-      "type": "equirectangular",
+      "title": "Stairs (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorStairs.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorStairs"
+      },
       "hotSpots": [
         {
           "pitch": -35.30149373498859,
           "yaw": 40.60113306699022,
           "type": "scene",
           "sceneId": "DrawingRoomFour",
-          "text": "DrawingRoomFour"
+          "text": "Drawing Room 4"
         },
         {
           "pitch": -20.719393720412715,
           "yaw": -1.5676888895160506,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": -29.742646926121196,
           "yaw": -61.09744312543807,
           "type": "scene",
           "sceneId": "DrawingRoomThree",
-          "text": "DrawingRoomThree"
+          "text": "Drawing Room 3"
         },
         {
           "pitch": 11.097213236443608,
           "yaw": -93.01873227222073,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": 8.66944227645208,
           "yaw": -36.834604196476405,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomTwo",
-          "text": "FirstFloorDrawingRoomTwo"
+          "text": "Drawing Room 2 (1st floor)"
         }
       ]
     },
     "FirstFloorWalkingPath": {
-      "panorama": "assets/FirstFloorWalkingPath.jpg",
-      "type": "equirectangular",
+      "title": "Hallway (1st floor)",
+      "type": "multires",
+      "preview": "assets/preview/FirstFloorWalkingPath.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FirstFloorWalkingPath"
+      },
       "hotSpots": [
         {
           "pitch": -1.890106416837123,
           "yaw": -40.499401290516914,
           "type": "scene",
           "sceneId": "PeachRoom",
-          "text": "PeachRoom"
+          "text": "Peach Room"
         },
         {
           "pitch": -0.0889192804067266,
           "yaw": 71.7828692144999,
           "type": "scene",
           "sceneId": "FirstFloorAquaBlueRoom",
-          "text": "FirstFloorAquaBlueRoom"
+          "text": "Aqua Blue Room (1st floor)"
         },
         {
           "pitch": -11.454781695151027,
           "yaw": 90.84954723297886,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         },
         {
           "pitch": -0.052942972218317785,
           "yaw": 90.97534552182292,
           "type": "scene",
           "sceneId": "FirstFloorDarkGreyRoom",
-          "text": "FirstFloorDarkGreyRoom"
+          "text": "Dark Grey Room (1st floor)"
         },
         {
           "pitch": 0.7972763321761698,
           "yaw": 120.61220281122749,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomOne",
-          "text": "FirstFloorDrawingRoomOne"
+          "text": "Drawing Room 1 (1st floor)"
         },
         {
           "pitch": -30.933775306195127,
           "yaw": -178.88954085789942,
           "type": "scene",
           "sceneId": "FirstFloorStairs",
-          "text": "FirstFloorStairs"
+          "text": "Stairs (1st floor)"
         },
         {
           "pitch": -22.255684692791277,
           "yaw": 158.97292908650266,
           "type": "scene",
           "sceneId": "DrawingRoomFour",
-          "text": "DrawingRoomFour"
+          "text": "Drawing Room 4"
         },
         {
           "pitch": -12.084811873364817,
           "yaw": -121.67513019501479,
           "type": "scene",
           "sceneId": "DarkBlueRoom",
-          "text": "DarkBlueRoom"
+          "text": "Dark Blue Room"
         }
       ]
     },
     "BackLawnHut": {
-      "panorama": "assets/BackLawnHut.jpg",
-      "type": "equirectangular",
+      "title": "Back Lawn Hut",
+      "type": "multires",
+      "preview": "assets/preview/BackLawnHut.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/BackLawnHut"
+      },
       "hotSpots": [
         {
           "pitch": 0.7050233915368621,
           "yaw": -151.3205414461922,
           "type": "scene",
           "sceneId": "BackLawnFour",
-          "text": "BackLawnFour"
+          "text": "Back Lawn"
         },
         {
           "pitch": -2.064730610618616,
           "yaw": 114.21464803495594,
           "type": "scene",
           "sceneId": "BackLawnOne",
-          "text": "BackLawnOne"
+          "text": "Back Lawn 2"
         },
         {
           "pitch": 3.0781136870862564,
           "yaw": 129.51914208323564,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         },
         {
           "pitch": -1.7946661936673396,
           "yaw": -84.05539871747555,
           "type": "scene",
           "sceneId": "CricketNetArea",
-          "text": "CricketNetArea"
+          "text": "Cricket Net"
         }
       ]
     },
     "BackLawnOne": {
-      "panorama": "assets/BackLawnOne.jpg",
-      "type": "equirectangular",
+      "title": "Back Lawn 2",
+      "type": "multires",
+      "preview": "assets/preview/BackLawnOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/BackLawnOne"
+      },
       "hotSpots": [
         {
           "pitch": 0.49363401458332334,
           "yaw": -172.76020538385708,
           "type": "scene",
           "sceneId": "BackLawnFour",
-          "text": "BackLawnFour"
+          "text": "Back Lawn"
         },
         {
           "pitch": 1.7859180976247357,
           "yaw": -106.97698173929447,
           "type": "scene",
           "sceneId": "BackLawnHut",
-          "text": "BackLawnHut"
+          "text": "Back Lawn Hut"
         },
         {
           "pitch": 4.2153787843513575,
           "yaw": 6.768323975459477,
           "type": "scene",
           "sceneId": "GreenRoom",
-          "text": "GreenRoom"
+          "text": "Green Room"
         },
         {
           "pitch": 4.8041552006448045,
           "yaw": 89.84284104976506,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         },
         {
           "pitch": 1.3653147232724818,
           "yaw": -119.28820711943835,
           "type": "scene",
           "sceneId": "CricketNetArea",
-          "text": "CricketNetArea"
+          "text": "Cricket Net"
         }
       ]
     },
     "BackLawnFour": {
-      "panorama": "assets/BackLawnFour.jpg",
-      "type": "equirectangular",
+      "title": "Back Lawn",
+      "type": "multires",
+      "preview": "assets/preview/BackLawnFour.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/BackLawnFour"
+      },
       "hotSpots": [
         {
           "pitch": 1.859724976778955,
           "yaw": 156.04104272296823,
           "type": "scene",
           "sceneId": "BackLawnHut",
-          "text": "BackLawnHut"
+          "text": "Back Lawn Hut"
         },
         {
           "pitch": 0.5786579171008223,
           "yaw": -164.93037443863753,
           "type": "scene",
           "sceneId": "BackLawnOne",
-          "text": "BackLawnOne"
+          "text": "Back Lawn 2"
         },
         {
           "pitch": 2.9440069199900916,
           "yaw": -130.17141070820227,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         },
         {
           "pitch": 2.7664151273636985,
           "yaw": 138.05242888019154,
           "type": "scene",
           "sceneId": "CricketNetArea",
-          "text": "CricketNetArea"
+          "text": "Cricket Net"
         }
       ]
     },
     "CricketNetArea": {
-      "panorama": "assets/CricketNetArea.jpg",
-      "type": "equirectangular",
+      "title": "Cricket Net",
+      "type": "multires",
+      "preview": "assets/preview/CricketNetArea.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/CricketNetArea"
+      },
       "hotSpots": [
         {
           "pitch": 2.720061766847832,
           "yaw": -80.02494523486189,
           "type": "scene",
           "sceneId": "BackLawnFour",
-          "text": "BackLawnFour"
+          "text": "Back Lawn"
         },
         {
           "pitch": 1.0112055005588736,
           "yaw": -172.6782964580082,
           "type": "scene",
           "sceneId": "BackLawnHut",
-          "text": "BackLawnHut"
+          "text": "Back Lawn Hut"
         },
         {
           "pitch": 4.615697203301225,
           "yaw": -144.8265079066634,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         }
       ]
     },
     "DarkGreyRoomWashroom": {
-      "panorama": "assets/DarkGreyRoomWashroom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Grey Room Bathroom",
+      "type": "multires",
+      "preview": "assets/preview/DarkGreyRoomWashroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DarkGreyRoomWashroom"
+      },
       "hotSpots": [
         {
           "pitch": -6.506873134875534,
           "yaw": -98.29076271131288,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         }
       ]
     },
     "DarkGreyRoom": {
-      "panorama": "assets/DarkGreyRoom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Grey Room",
+      "type": "multires",
+      "preview": "assets/preview/DarkGreyRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DarkGreyRoom"
+      },
       "hotSpots": [
         {
           "pitch": -6.284630455506787,
           "yaw": 71.74205880686273,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": -2.658898272212962,
           "yaw": 130.92721914440983,
           "type": "scene",
           "sceneId": "DarkGreyRoomWashroom",
-          "text": "DarkGreyRoomWashroom"
+          "text": "Dark Grey Room Bathroom"
         },
         {
           "pitch": 0.8470637073823514,
           "yaw": -136.49251402792802,
           "type": "scene",
           "sceneId": "PoolAreaTwo",
-          "text": "PoolAreaTwo"
+          "text": "Pool 2"
         },
         {
           "pitch": 2.033731578915515,
           "yaw": -102.06308848939379,
           "type": "scene",
           "sceneId": "PoolAreaOne",
-          "text": "PoolAreaOne"
+          "text": "Pool"
         }
       ]
     },
     "DrawingRoomTwo": {
-      "panorama": "assets/DrawingRoomTwo.jpg",
-      "type": "equirectangular",
+      "title": "Drawing Room 2",
+      "type": "multires",
+      "preview": "assets/preview/DrawingRoomTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DrawingRoomTwo"
+      },
       "hotSpots": [
         {
           "pitch": 0.028568820603183488,
           "yaw": -29.94107610952998,
           "type": "scene",
           "sceneId": "DrawingRoomFour",
-          "text": "Drawning room 4"
+          "text": "Drawing Room 4"
         },
         {
           "pitch": 0.21612114628115311,
           "yaw": 14.438086032425762,
           "type": "scene",
           "sceneId": "DrawingRoomThree",
-          "text": "DrawingRoomThree"
+          "text": "Drawing Room 3"
         },
         {
           "pitch": -1.9516659104368164,
           "yaw": 97.14440509864754,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         },
         {
           "pitch": 2.707482127320494,
           "yaw": -177.03647158623576,
           "type": "scene",
           "sceneId": "PoolAreaOne",
-          "text": "PoolAreaOne"
+          "text": "Pool"
         },
         {
           "pitch": 3.3472106949346796,
           "yaw": 155.20785295873347,
           "type": "scene",
           "sceneId": "PoolAreaTwo",
-          "text": "PoolAreaTwo"
+          "text": "Pool 2"
         },
         {
           "pitch": 8.580728744764242,
           "yaw": -11.427725165868974,
           "type": "scene",
           "sceneId": "FirstFloorStairs",
-          "text": "FirstFloorStairs"
+          "text": "Stairs (1st floor)"
         },
         {
           "pitch": 21.38161018432661,
           "yaw": 15.722496454647299,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         }
       ]
     },
     "DrawingRoomThree": {
-      "panorama": "assets/DrawingRoomThree.jpg",
-      "type": "equirectangular",
+      "title": "Drawing Room 3",
+      "type": "multires",
+      "preview": "assets/preview/DrawingRoomThree.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DrawingRoomThree"
+      },
       "hotSpots": [
         {
           "pitch": -2.9063332163993296,
           "yaw": -3.6215630764645015,
           "type": "scene",
           "sceneId": "DrawingRoomFour",
-          "text": "DrawingRoomFour"
+          "text": "Drawing Room 4"
         },
         {
           "pitch": -4.379179247844392,
           "yaw": -66.59628952381344,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": -0.856006743698766,
           "yaw": 104.20023237758517,
           "type": "scene",
           "sceneId": "GreenRoom",
-          "text": "GreenRoom"
+          "text": "Green Room"
         },
         {
           "pitch": 19.1394817822533,
           "yaw": 49.22003429783389,
           "type": "scene",
           "sceneId": "FirstFloorStairs",
-          "text": "FirstFloorStairs"
+          "text": "Stairs (1st floor)"
         },
         {
           "pitch": 0.18216257916331713,
           "yaw": -112.77856845199595,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         }
       ]
     },
     "DrawingRoomFour": {
-      "panorama": "assets/DrawingRoomFour.jpg",
-      "type": "equirectangular",
+      "title": "Drawing Room 4",
+      "type": "multires",
+      "preview": "assets/preview/DrawingRoomFour.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DrawingRoomFour"
+      },
       "hotSpots": [
         {
           "pitch": -2.786506891895413,
           "yaw": -16.904721144832845,
           "type": "scene",
           "sceneId": "DrawingRoomThree",
-          "text": "DrawingRoomThree"
+          "text": "Drawing Room 3"
         },
         {
           "pitch": -3.127118368780025,
           "yaw": 66.94603960025725,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": 18.483218669454253,
           "yaw": -57.30202100972195,
           "type": "scene",
           "sceneId": "FirstFloorStairs",
-          "text": "FirstFloorStairs"
+          "text": "Stairs (1st floor)"
         },
         {
           "pitch": 25.621133349963717,
           "yaw": -26.347284823426726,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": 1.6086529864615238,
           "yaw": 42.22533884010709,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         }
       ]
     },
     "FrontSideOfVilla": {
-      "panorama": "assets/FrontSideOfVilla.jpg",
-      "type": "equirectangular",
+      "title": "Front of the Villa",
+      "type": "multires",
+      "preview": "assets/preview/FrontSideOfVilla.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FrontSideOfVilla"
+      },
       "hotSpots": [
         {
           "pitch": 3.8527728720248717,
           "yaw": 10.111646570240236,
           "type": "scene",
           "sceneId": "DrawingRoomFour",
-          "text": "DrawingRoomFour"
+          "text": "Drawing Room 4"
         },
         {
           "pitch": 0.4710917916819096,
           "yaw": 84.06131126068908,
           "type": "scene",
           "sceneId": "FrontLawnBadminton",
-          "text": "FrontLawnBadminton"
+          "text": "Badminton Court"
         },
         {
           "pitch": 1.1257549703362393,
           "yaw": 115.31042323381237,
           "type": "scene",
           "sceneId": "GuestEntryRoad",
-          "text": "GuestEntryRoad"
+          "text": "Driveway"
         },
         {
           "pitch": 2.997657677891762,
           "yaw": -92.57696993535167,
           "type": "scene",
           "sceneId": "BackLawnFour",
-          "text": "BackLawnFour"
+          "text": "Back Lawn"
         },
         {
           "pitch": 48.54403709306798,
           "yaw": 9.752932043808567,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         }
       ]
     },
     "FrontLawnBadminton": {
-      "panorama": "assets/FrontLawnBadminton.jpg",
-      "type": "equirectangular",
+      "title": "Badminton Court",
+      "type": "multires",
+      "preview": "assets/preview/FrontLawnBadminton.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FrontLawnBadminton"
+      },
       "hotSpots": [
         {
           "pitch": 0.5468885075131344,
           "yaw": 159.51935548046802,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         },
         {
           "pitch": 1.1257047861708536,
           "yaw": -26.24916823338265,
           "type": "scene",
           "sceneId": "FrontLawnOne",
-          "text": "FrontLawnOne"
+          "text": "Front Lawn"
         },
         {
           "pitch": 29.446635367520024,
           "yaw": 178.07997710559033,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         },
         {
           "pitch": 27.81237871466071,
           "yaw": -104.2379474946581,
           "type": "scene",
           "sceneId": "RoofTwo",
-          "text": "RoofTwo"
+          "text": "Roof 2"
         }
       ]
     },
     "FrontLawnTwo": {
-      "panorama": "assets/FrontLawnTwo.jpg",
-      "type": "equirectangular",
+      "title": "Front Lawn 2",
+      "type": "multires",
+      "preview": "assets/preview/FrontLawnTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FrontLawnTwo"
+      },
       "hotSpots": [
         {
           "pitch": 0.6629599839504592,
           "yaw": -71.60502692446913,
           "type": "scene",
           "sceneId": "FrontLawnOne",
-          "text": "FrontLawnOne"
+          "text": "Front Lawn"
         },
         {
           "pitch": 1.25905130151285,
           "yaw": -3.4820972677094844,
           "type": "scene",
           "sceneId": "PoolAreaTwo",
-          "text": "PoolAreaTwo"
+          "text": "Pool 2"
         },
         {
           "pitch": 22.589581930285426,
           "yaw": 6.804174750069812,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         }
       ]
     },
     "GreenRoomWashroom": {
-      "panorama": "assets/GreenRoomWashroom.jpg",
-      "type": "equirectangular",
+      "title": "Green Room Bathroom",
+      "type": "multires",
+      "preview": "assets/preview/GreenRoomWashroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/GreenRoomWashroom"
+      },
       "hotSpots": [
         {
           "pitch": -8.42176655655919,
           "yaw": -89.27055333381932,
           "type": "scene",
           "sceneId": "GreenRoomWashroom",
-          "text": "GreenRoomWashroom"
+          "text": "Green Room Bathroom"
         }
       ]
     },
     "GreenRoom": {
-      "panorama": "assets/GreenRoom.jpg",
-      "type": "equirectangular",
+      "title": "Green Room",
+      "type": "multires",
+      "preview": "assets/preview/GreenRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/GreenRoom"
+      },
       "hotSpots": [
         {
           "pitch": -3.699094922326269,
           "yaw": 62.985114698406576,
           "type": "scene",
           "sceneId": "GreenRoomWashroom",
-          "text": "GreenRoomWashroom"
+          "text": "Green Room Bathroom"
         },
         {
           "pitch": -1.6169972798608272,
           "yaw": -164.98661499487858,
           "type": "scene",
           "sceneId": "DrawingRoomThree",
-          "text": "DrawingRoomThree"
+          "text": "Drawing Room 3"
         }
       ]
     },
     "PeachRoomWashroom": {
-      "panorama": "assets/PeachRoomWashroom.jpg",
-      "type": "equirectangular",
+      "title": "Peach Room Bathroom",
+      "type": "multires",
+      "preview": "assets/preview/PeachRoomWashroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/PeachRoomWashroom"
+      },
       "hotSpots": [
         {
           "pitch": -11.638272407739018,
           "yaw": 158.91589733922828,
           "type": "scene",
           "sceneId": "PeachRoom",
-          "text": "PeachRoom"
+          "text": "Peach Room"
         }
       ]
     },
     "GuestEntryRoad": {
-      "panorama": "assets/GuestEntryRoad.jpg",
-      "type": "equirectangular",
+      "title": "Driveway",
+      "type": "multires",
+      "preview": "assets/preview/GuestEntryRoad.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/GuestEntryRoad"
+      },
       "hotSpots": [
         {
           "pitch": 0.4155920686137939,
           "yaw": -2.7877403661813576,
           "type": "scene",
           "sceneId": "FrontSideOfVilla",
-          "text": "FrontSideOfVilla"
+          "text": "Front of the Villa"
         }
       ]
     },
     "PeachRoom": {
-      "panorama": "assets/PeachRoom.jpg",
-      "type": "equirectangular",
+      "title": "Peach Room",
+      "type": "multires",
+      "preview": "assets/preview/PeachRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/PeachRoom"
+      },
       "hotSpots": [
         {
           "pitch": -8.00504500912962,
           "yaw": 149.25113479992754,
           "type": "scene",
           "sceneId": "PeachRoomWashroom",
-          "text": "PeachRoomWashroom"
+          "text": "Peach Room Bathroom"
         },
         {
           "pitch": -6.033614872891049,
           "yaw": -113.21755144726481,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": -3.140331814225459,
           "yaw": -97.69977691760496,
           "type": "scene",
           "sceneId": "DarkBlueRoom",
-          "text": "DarkBlueRoom"
+          "text": "Dark Blue Room"
         }
       ]
     },
     "PoolAreaTwo": {
-      "panorama": "assets/PoolAreaTwo.jpg",
-      "type": "equirectangular",
+      "title": "Pool 2",
+      "type": "multires",
+      "preview": "assets/preview/PoolAreaTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/PoolAreaTwo"
+      },
       "hotSpots": [
         {
           "pitch": 1.2161902572295415,
           "yaw": -161.24542396598036,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": 1.611930237409777,
           "yaw": 116.45950979500654,
           "type": "scene",
           "sceneId": "PoolAreaOne",
-          "text": "PoolAreaOne"
+          "text": "Pool"
         },
         {
           "pitch": -2.761488749913684,
           "yaw": 11.153246917866614,
           "type": "scene",
           "sceneId": "FrontLawnTwo",
-          "text": "FrontLawnTwo"
+          "text": "Front Lawn 2"
         },
         {
           "pitch": 2.3105267924397968,
           "yaw": -131.75466889871396,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         },
         {
           "pitch": 43.56994263063294,
           "yaw": -119.92907025216381,
           "type": "scene",
           "sceneId": "RoofTwo",
-          "text": "RoofTwo"
+          "text": "Roof 2"
         },
         {
           "pitch": 28.560177093974403,
           "yaw": -161.5206146027105,
           "type": "scene",
           "sceneId": "FirstFloorBalconyOne",
-          "text": "FirstFloorBalconyOne"
+          "text": "Balcony 1 (1st floor)"
         },
         {
           "pitch": 14.755317734208392,
           "yaw": -175.99146478349053,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         }
       ]
     },
     "FrontLawnOne": {
-      "panorama": "assets/FrontLawnOne.jpg",
-      "type": "equirectangular",
+      "title": "Front Lawn",
+      "type": "multires",
+      "preview": "assets/preview/FrontLawnOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/FrontLawnOne"
+      },
       "hotSpots": [
         {
           "pitch": 0.8294493406868028,
           "yaw": 25.443614617025005,
           "type": "scene",
           "sceneId": "FrontLawnBadminton",
-          "text": "FrontLawnBadminton"
+          "text": "Badminton Court"
         },
         {
           "pitch": 1.847734554807617,
           "yaw": 138.83862263985063,
           "type": "scene",
           "sceneId": "FrontLawnTwo",
-          "text": "FrontLawnTwo"
+          "text": "Front Lawn 2"
         }
       ]
     },
     "PoolAreaOne": {
-      "panorama": "assets/PoolAreaOne.jpg",
-      "type": "equirectangular",
+      "title": "Pool",
+      "type": "multires",
+      "preview": "assets/preview/PoolAreaOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/PoolAreaOne"
+      },
       "hotSpots": [
         {
           "pitch": -7.169136986643125,
           "yaw": -106.82892000957187,
           "type": "scene",
           "sceneId": "PoolAreaTwo",
-          "text": "PoolAreaTwo"
+          "text": "Pool 2"
         },
         {
           "pitch": 19.24511322502749,
           "yaw": -155.27603898925327,
           "type": "scene",
           "sceneId": "FirstFloorBalconyOne",
-          "text": "FirstFloorBalconyOne"
+          "text": "Balcony 1 (1st floor)"
         },
         {
           "pitch": 16.606798360917246,
           "yaw": 168.71624690110065,
           "type": "scene",
           "sceneId": "FirstFloorBalconyTwo",
-          "text": "FirstFloorBalconyTwo"
+          "text": "Balcony 2 (1st floor)"
         },
         {
           "pitch": 0.9611777376781059,
           "yaw": 175.0992755148327,
           "type": "scene",
           "sceneId": "DrawingRoomTwo",
-          "text": "DrawingRoomTwo"
+          "text": "Drawing Room 2"
         },
         {
           "pitch": 1.6546182292367053,
           "yaw": -161.856561276322,
           "type": "scene",
           "sceneId": "DarkGreyRoom",
-          "text": "DarkGreyRoom"
+          "text": "Dark Grey Room"
         },
         {
           "pitch": 29.09117598976938,
           "yaw": -142.08970870420652,
           "type": "scene",
           "sceneId": "RoofTwo",
-          "text": "RoofTwo"
+          "text": "Roof 2"
         }
       ]
     },
     "RoofOne": {
-      "panorama": "assets/RoofOne.jpg",
-      "type": "equirectangular",
+      "title": "Roof",
+      "type": "multires",
+      "preview": "assets/preview/RoofOne.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/RoofOne"
+      },
       "hotSpots": [
         {
           "pitch": -9.578951576597769,
           "yaw": -123.02942436861454,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         },
         {
           "pitch": -11.59854290504752,
           "yaw": -17.860111408258287,
           "type": "scene",
           "sceneId": "BackLawnFour",
-          "text": "BackLawnFour"
+          "text": "Back Lawn"
         },
         {
           "pitch": -13.30188755726875,
           "yaw": 28.680630801073924,
           "type": "scene",
           "sceneId": "BackLawnHut",
-          "text": "BackLawnHut"
+          "text": "Back Lawn Hut"
         },
         {
           "pitch": -8.590482170942465,
           "yaw": 21.42357986085557,
           "type": "scene",
           "sceneId": "CricketNetArea",
-          "text": "CricketNetArea"
+          "text": "Cricket Net"
         }
       ]
     },
     "RoofTwo": {
-      "panorama": "assets/RoofTwo.jpg",
-      "type": "equirectangular",
+      "title": "Roof 2",
+      "type": "multires",
+      "preview": "assets/preview/RoofTwo.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/RoofTwo"
+      },
       "hotSpots": [
         {
           "pitch": -7.048348960405699,
           "yaw": 126.93957608127835,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         },
         {
           "pitch": -30.93278918554993,
@@ -1136,23 +1457,33 @@
           "yaw": 151.4752348951977,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomTwo",
-          "text": "FirstFloorDrawingRoomTwo"
+          "text": "Drawing Room 2 (1st floor)"
         }
       ]
     },
     "RoofFour": {
-      "panorama": "assets/RoofFour.jpg",
-      "type": "equirectangular",
+      "title": "Roof 3",
+      "type": "multires",
+      "preview": "assets/preview/RoofFour.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/RoofFour"
+      },
       "hotSpots": [
         {
           "pitch": -6.393069060741043,
           "yaw": 120.6869585833406,
           "type": "scene",
           "sceneId": "RoofOne",
-          "text": "RoofOne"
+          "text": "Roof"
         },
         {
           "pitch": -15.598179040089429,
@@ -1166,62 +1497,244 @@
           "yaw": -122.20010335395814,
           "type": "scene",
           "sceneId": "RoofFour",
-          "text": "RoofFour"
+          "text": "Roof 3"
         },
         {
           "pitch": 1.0051640303227767,
           "yaw": -178.3814819642529,
           "type": "scene",
           "sceneId": "FirstFloorDrawingRoomTwo",
-          "text": "FirstFloorDrawingRoomTwo"
+          "text": "Drawing Room 2 (1st floor)"
         }
       ]
     },
     "DarkBlueRoomBathroom": {
-      "panorama": "assets/DarkBlueRoomBathroom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Blue Room Bathroom",
+      "type": "multires",
+      "preview": "assets/preview/DarkBlueRoomBathroom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DarkBlueRoomBathroom"
+      },
       "hotSpots": [
         {
           "pitch": -12.854040066164238,
           "yaw": -86.24066536308703,
           "type": "scene",
           "sceneId": "DarkBlueRoom",
-          "text": "DarkBlueRoom"
+          "text": "Dark Blue Room"
         }
       ]
     },
     "DarkBlueRoom": {
-      "panorama": "assets/DarkBlueRoom.jpg",
-      "type": "equirectangular",
+      "title": "Dark Blue Room",
+      "type": "multires",
+      "preview": "assets/preview/DarkBlueRoom.jpg",
       "hfov": 100,
       "maxHfov": 120,
       "minHfov": 50,
+      "multiRes": {
+        "path": "/%l/%s%y_%x",
+        "fallbackPath": "/fallback/%s",
+        "extension": "webp",
+        "tileResolution": 512,
+        "maxLevel": 3,
+        "cubeResolution": 2048,
+        "basePath": "assets/tiles/DarkBlueRoom"
+      },
       "hotSpots": [
         {
           "pitch": -9.208742867894976,
           "yaw": 88.0118782327794,
           "type": "scene",
           "sceneId": "DarkBlueRoomBathroom",
-          "text": "DarkBlueRoomBathroom"
+          "text": "Dark Blue Room Bathroom"
         },
         {
           "pitch": -2.864029969456527,
           "yaw": 170.1426290668922,
           "type": "scene",
           "sceneId": "FirstFloorWalkingPath",
-          "text": "FirstFloorWalkingPath"
+          "text": "Hallway (1st floor)"
         },
         {
           "pitch": -3.2841584058315294,
           "yaw": 151.4130721535035,
           "type": "scene",
           "sceneId": "DarkBlueRoom",
-          "text": "DarkBlueRoom"
+          "text": "Dark Blue Room"
         }
       ]
     }
-  }
+  },
+  "menu": [
+    {
+      "name": "Grounds",
+      "scenes": [
+        {
+          "id": "FrontSideOfVilla",
+          "title": "Front of the Villa"
+        },
+        {
+          "id": "GuestEntryRoad",
+          "title": "Driveway"
+        },
+        {
+          "id": "FrontLawnOne",
+          "title": "Front Lawn"
+        },
+        {
+          "id": "FrontLawnTwo",
+          "title": "Front Lawn 2"
+        },
+        {
+          "id": "FrontLawnBadminton",
+          "title": "Badminton Court"
+        },
+        {
+          "id": "BackLawnFour",
+          "title": "Back Lawn"
+        },
+        {
+          "id": "BackLawnOne",
+          "title": "Back Lawn 2"
+        },
+        {
+          "id": "BackLawnHut",
+          "title": "Back Lawn Hut"
+        },
+        {
+          "id": "CricketNetArea",
+          "title": "Cricket Net"
+        },
+        {
+          "id": "PoolAreaOne",
+          "title": "Pool"
+        },
+        {
+          "id": "PoolAreaTwo",
+          "title": "Pool 2"
+        }
+      ]
+    },
+    {
+      "name": "Ground floor",
+      "scenes": [
+        {
+          "id": "DrawingRoomFour",
+          "title": "Drawing Room 4"
+        },
+        {
+          "id": "DrawingRoomThree",
+          "title": "Drawing Room 3"
+        },
+        {
+          "id": "DrawingRoomTwo",
+          "title": "Drawing Room 2"
+        },
+        {
+          "id": "GreenRoom",
+          "title": "Green Room"
+        },
+        {
+          "id": "GreenRoomWashroom",
+          "title": "Green Room Bathroom"
+        },
+        {
+          "id": "DarkGreyRoom",
+          "title": "Dark Grey Room"
+        },
+        {
+          "id": "DarkGreyRoomWashroom",
+          "title": "Dark Grey Room Bathroom"
+        }
+      ]
+    },
+    {
+      "name": "First floor",
+      "scenes": [
+        {
+          "id": "FirstFloorStairs",
+          "title": "Stairs (1st floor)"
+        },
+        {
+          "id": "FirstFloorWalkingPath",
+          "title": "Hallway (1st floor)"
+        },
+        {
+          "id": "FirstFloorDrawingRoomOne",
+          "title": "Drawing Room 1 (1st floor)"
+        },
+        {
+          "id": "FirstFloorDrawingRoomTwo",
+          "title": "Drawing Room 2 (1st floor)"
+        },
+        {
+          "id": "FirstFloorAquaBlueRoom",
+          "title": "Aqua Blue Room (1st floor)"
+        },
+        {
+          "id": "FirstFloorAquaBlueRoomWashroom",
+          "title": "Aqua Blue Room Bathroom (1st floor)"
+        },
+        {
+          "id": "DarkBlueRoom",
+          "title": "Dark Blue Room"
+        },
+        {
+          "id": "DarkBlueRoomBathroom",
+          "title": "Dark Blue Room Bathroom"
+        },
+        {
+          "id": "FirstFloorDarkGreyRoom",
+          "title": "Dark Grey Room (1st floor)"
+        },
+        {
+          "id": "FirstFloorDarkGreyRoomWashroom",
+          "title": "Dark Grey Room Bathroom (1st floor)"
+        },
+        {
+          "id": "PeachRoom",
+          "title": "Peach Room"
+        },
+        {
+          "id": "PeachRoomWashroom",
+          "title": "Peach Room Bathroom"
+        },
+        {
+          "id": "FirstFloorBalconyOne",
+          "title": "Balcony 1 (1st floor)"
+        },
+        {
+          "id": "FirstFloorBalconyTwo",
+          "title": "Balcony 2 (1st floor)"
+        }
+      ]
+    },
+    {
+      "name": "Roof",
+      "scenes": [
+        {
+          "id": "RoofOne",
+          "title": "Roof"
+        },
+        {
+          "id": "RoofTwo",
+          "title": "Roof 2"
+        },
+        {
+          "id": "RoofFour",
+          "title": "Roof 3"
+        }
+      ]
+    }
+  ]
 }

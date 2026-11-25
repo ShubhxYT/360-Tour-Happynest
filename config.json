@@ -2,8 +2,7 @@
   "appearance": {
     "viewport": {
       "width": "device-width",
-      "initialScale": 1,
-      "userScalable": false
+      "initialScale": 1
     },
     "hotspots": {
       "scale": 1,
@@ -16,8 +15,8 @@
     }
   },
   "transitions": {
-    "preload": "onscene",
-    "effect": "flash",
+    "preload": "neighbors",
+    "effect": "loading-screen",
     "duration": 300,
     "hideSpinner": false,
     "pill": {
@@ -31,7 +30,7 @@
   },
   "nadirLogo": {
     "enabled": true,
-    "src": "logo.png",
+    "src": "logo.webp",
     "viewportPercent": 30,
     "minSize": 40,
     "maxSize": 400,

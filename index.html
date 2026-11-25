@@ -1,50 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HappyNest Blanc Belle — 360° Virtual Tour</title>
+<meta name="description" content="Walk through HappyNest Blanc Belle, a luxury farm stay in Sohna, with this 360° virtual tour of the villa, gardens, pool, and rooms.">
+<link rel="canonical" href="https://tour.happynestfarm.in/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HappyNest Blanc Belle">
+<meta property="og:title" content="HappyNest Blanc Belle — 360° Virtual Tour">
+<meta property="og:description" content="Walk through HappyNest Blanc Belle, a luxury farm stay in Sohna, with this 360° virtual tour of the villa, gardens, pool, and rooms.">
+<meta property="og:url" content="https://tour.happynestfarm.in/">
+<meta property="og:image" content="https://tour.happynestfarm.in/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HappyNest Blanc Belle — 360° Virtual Tour">
+<meta name="twitter:description" content="Walk through HappyNest Blanc Belle, a luxury farm stay in Sohna, with this 360° virtual tour.">
+<meta name="twitter:image" content="https://tour.happynestfarm.in/og.jpg">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="stylesheet" href="vendor/pannellum.css">
 <style>
-body,html{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#000}
 #panorama{width:100%;height:100%}
 .pnlm-about-msg,.pnlm-load-box,.pnlm-load-button{display:none!important}
-#vr-flash{position:fixed;inset:0;pointer-events:none;z-index:9999;background:#fff;opacity:0;transition:opacity 0.15s}
-#vr-flash.on{opacity:1;transition:opacity 0s}
-#vr-pill{position:fixed;display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:20px;font-family:system-ui,sans-serif;font-size:13px;z-index:10000;pointer-events:none;transition:opacity 0.5s;background:rgba(0,0,0,0.75);color:#fff;bottom:12px;right:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#loading-screen{position:fixed;inset:0;z-index:1000;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s;font-family:system-ui,sans-serif}
+#loading-screen.hidden{opacity:0;pointer-events:none}
+.loading-logo{width:100px;height:100px;margin-bottom:24px}
+.loading-logo img{width:100%;height:100%;object-fit:contain;border-radius:22px}
+.loading-bar-track{width:180px;height:3px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;margin-bottom:14px}
+.loading-bar-fill{height:100%;width:30%;background:#4fc3f7;border-radius:2px;animation:load-bar 1.8s ease-in-out infinite}
+@keyframes load-bar{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+.loading-text{color:rgba(255,255,255,.45);font-size:12px;margin:0;letter-spacing:.5px}
+#vr-pill{position:fixed;display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:20px;font-family:system-ui,sans-serif;font-size:13px;z-index:10000;pointer-events:none;transition:opacity .5s;background:rgba(0,0,0,.75);color:#fff;bottom:12px;right:12px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 #vr-pill.vr-pill-off{opacity:0}
-#vr-pill.vr-pill-done{opacity:0;transition:opacity 0.8s ease 1s}
-.vr-pill-spin{width:12px;height:12px;border:2px solid rgba(255,255,255,0.3);border-top-color:#4fc3f7;border-radius:50%;animation:vr-spin 0.7s linear infinite}
+#vr-pill.vr-pill-done{opacity:0;transition:opacity .8s ease 1s}
+.vr-pill-spin{width:12px;height:12px;border:2px solid rgba(255,255,255,.3);border-top-color:#4fc3f7;border-radius:50%;animation:vr-spin .7s linear infinite}
 @keyframes vr-spin{to{transform:rotate(360deg)}}
 .nadir-logo{background:none!important;border:none!important;box-shadow:none!important;cursor:default!important;filter:none!important}
 .nadir-logo::after{display:none!important}
 .nadir-logo:hover{filter:none!important}
+.nadir-logo .pnlm-tooltip,.nadir-logo span{display:none!important}
 .nadir-logo img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;object-fit:cover;pointer-events:none;will-change:transform}
+#scene-title{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:20;font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.04em;color:#fff;background:rgba(0,0,0,.55);padding:6px 14px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none;max-width:70vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#menu-btn,#menu-close{position:fixed;z-index:30;font-family:system-ui,sans-serif;border:0;cursor:pointer}
+#menu-btn{top:auto;bottom:14px;left:14px;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;background:rgba(0,0,0,.6);color:#fff;font-size:13px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#menu-btn:hover{background:rgba(0,0,0,.75)}
+#menu-panel{position:fixed;inset:0 auto 0 0;width:min(320px,86vw);background:rgba(12,12,12,.92);color:#fff;z-index:40;transform:translateX(-105%);transition:transform .25s ease;font-family:system-ui,sans-serif;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;flex-direction:column;box-shadow:8px 0 30px rgba(0,0,0,.4)}
+#menu-panel.open{transform:translateX(0)}
+#menu-head{display:flex;align-items:center;justify-content:space-between;padding:16px 16px 8px}
+#menu-head h2{margin:0;font-size:15px;font-weight:600;letter-spacing:.04em}
+#menu-close{position:static;background:transparent;color:#fff;font-size:22px;line-height:1;padding:4px 8px}
+#menu-list{overflow:auto;padding:8px 12px 24px;flex:1}
+.menu-group{margin:10px 0 4px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);padding:8px 8px 4px}
+.menu-item{display:block;width:100%;text-align:left;background:transparent;border:0;color:#fff;font:inherit;font-size:13px;padding:8px 10px;border-radius:8px;cursor:pointer}
+.menu-item:hover{background:rgba(255,255,255,.08)}
+.menu-item.current{background:rgba(79,195,247,.18);color:#4fc3f7}
+#menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:35;opacity:0;pointer-events:none;transition:opacity .25s}
+#menu-backdrop.open{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body>
+<div id="loading-screen">
+  <div class="loading-logo"><img src="logo.webp" alt="HappyNest Blanc Belle"></div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+  <p class="loading-text">Loading tour…</p>
+</div>
+<button id="menu-btn" type="button" aria-controls="menu-panel" aria-expanded="false">Rooms</button>
+<div id="menu-backdrop" hidden></div>
+<aside id="menu-panel" aria-label="Room list">
+  <div id="menu-head">
+    <h2>Rooms &amp; spaces</h2>
+    <button id="menu-close" type="button" aria-label="Close room list">×</button>
+  </div>
+  <nav id="menu-list"></nav>
+</aside>
+<div id="scene-title"></div>
 <div id="panorama"></div>
-<div id="vr-flash"></div>
 <div id="vr-pill" class="vr-pill-off"><span class="vr-pill-spin"></span><span class="vr-pill-text"></span></div>
-<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="vendor/pannellum.js"></script>
 <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
 Promise.all([
-  fetch('tour.json').then(r=>r.json()),
-  fetch('config.json').then(r=>r.json())
+  fetch('tour.json').then(function(r){ return r.json(); }),
+  fetch('config.json').then(function(r){ return r.json(); })
 ]).then(function(results){
-  var tour=results[0],cfg=results[1];
-
-  // viewport
-  var vp=cfg.appearance.viewport;
-  var meta=document.createElement('meta');
-  meta.name='viewport';
-  meta.content=[vp.width?'width='+vp.width:'',vp.initialScale?'initial-scale='+vp.initialScale:'',vp.userScalable===false?'user-scalable=no':''].filter(Boolean).join(',');
-  document.head.appendChild(meta);
-
-  // hotspot CSS
-  var h=cfg.appearance.hotspots;
-  var mid=Math.round(h.pulseRadius/2);
-  var alpha=h.pulseColor.replace(/[\d.]+\)$/,'0.15)');
-  var s=document.createElement('style');
-  s.textContent=
+  var tour = results[0], cfg = results[1];
+  var h = cfg.appearance.hotspots;
+  var mid = Math.round(h.pulseRadius / 2);
+  var alpha = h.pulseColor.replace(/[\d.]+\)$/, '0.15)');
+  var s = document.createElement('style');
+  s.textContent =
     '.pnlm-hotspot-base{will-change:transform;filter:drop-shadow(0 0 5px '+h.glowColor+')}'+
     '.pnlm-hotspot-base::after{content:"";position:absolute;inset:-3px;border-radius:50%;pointer-events:none;animation:pulse-ring '+h.pulseDuration+' infinite cubic-bezier(0.25,0,0,1)}'+
     '.pnlm-hotspot-base:hover{filter:drop-shadow(0 0 10px '+h.glowHoverColor+')}'+
@@ -54,189 +105,257 @@ Promise.all([
     '100%{box-shadow:0 0 0 '+h.pulseRadius+'px transparent}}';
   document.head.appendChild(s);
 
-  // pannellum + hotspot scaling
-  var SCALE=h.scale,HOVER_SCALE=h.hoverScale;
-  var v=pannellum.viewer('panorama',tour);
+  var SCALE = h.scale, HOVER_SCALE = h.hoverScale;
+  // Pannellum draws scene.title at the bottom; we use our own #scene-title instead.
+  var scenesForViewer = {};
+  Object.keys(tour.scenes).forEach(function(id){
+    var sc = Object.assign({}, tour.scenes[id]);
+    delete sc.title;
+    scenesForViewer[id] = sc;
+  });
+  var viewerDefault = Object.assign({}, tour.default);
+  delete viewerDefault.title;
+  var v = pannellum.viewer('panorama', {
+    default: viewerDefault,
+    scenes: scenesForViewer
+  });
 
   function stripScale(t){
-    var i=t.indexOf(' scale(');
-    return i===-1?t:t.substring(0,i);
+    var i = t.indexOf(' scale(');
+    return i === -1 ? t : t.substring(0, i);
   }
-  function applyScale(el,s){
-    var base=el.getAttribute('data-base-transform');
-    if(base) el.style.transform=base+' scale('+s+')';
+  function applyScale(el, sc){
+    var base = el.getAttribute('data-base-transform');
+    if (base) el.style.transform = base + ' scale(' + sc + ')';
   }
   function handleStyleChange(el){
-    if(el._scaling||!el.classList) return;
-    var t=el.style.transform||'';
-    if(!t) return;
-    if(!el.dataset.scaled){
-      el._scaling=true;
-      el.dataset.scaled='1';
-      el.setAttribute('data-base-transform',stripScale(t));
-      el.addEventListener('mouseenter',function(){applyScale(el,HOVER_SCALE)});
-      el.addEventListener('mouseleave',function(){applyScale(el,SCALE)});
-      el.addEventListener('touchstart',function(){applyScale(el,HOVER_SCALE)},{passive:true});
-      el.addEventListener('touchend',function(){applyScale(el,SCALE)},{passive:true});
-      el.style.transform=el.getAttribute('data-base-transform')+' scale('+SCALE+')';
-      el._scaling=false;
-    }else if(t.indexOf('scale(')===-1){
-      el._scaling=true;
-      el.setAttribute('data-base-transform',t);
-      el.style.transform=t+' scale('+SCALE+')';
-      el._scaling=false;
+    if (el._scaling || !el.classList) return;
+    var t = el.style.transform || '';
+    if (!t) return;
+    if (!el.dataset.scaled){
+      el._scaling = true;
+      el.dataset.scaled = '1';
+      el.setAttribute('data-base-transform', stripScale(t));
+      el.addEventListener('mouseenter', function(){ applyScale(el, HOVER_SCALE); });
+      el.addEventListener('mouseleave', function(){ applyScale(el, SCALE); });
+      el.addEventListener('touchstart', function(){ applyScale(el, HOVER_SCALE); }, {passive:true});
+      el.addEventListener('touchend', function(){ applyScale(el, SCALE); }, {passive:true});
+      el.style.transform = el.getAttribute('data-base-transform') + ' scale(' + SCALE + ')';
+      el._scaling = false;
+    } else if (t.indexOf('scale(') === -1){
+      el._scaling = true;
+      el.setAttribute('data-base-transform', t);
+      el.style.transform = t + ' scale(' + SCALE + ')';
+      el._scaling = false;
     }
   }
   new MutationObserver(function(ms){
     ms.forEach(function(m){
-      if(m.type==='attributes'&&m.attributeName==='style')
-        handleStyleChange(m.target);
+      if (m.type === 'attributes' && m.attributeName === 'style') handleStyleChange(m.target);
     });
-  }).observe(document.getElementById('panorama'),{subtree:true,attributes:true,attributeFilter:['style']});
-  v.on('scenechange',function(){
+  }).observe(document.getElementById('panorama'), {subtree:true, attributes:true, attributeFilter:['style']});
+  v.on('scenechange', function(){
     document.querySelectorAll('.pnlm-hotspot-base').forEach(function(e){
       delete e.dataset.scaled;
       e.removeAttribute('data-base-transform');
     });
   });
 
-  // ── Preload-on-scene-arrival with pill progress, flash transition ──
-  var TRANS=cfg.transitions||{};
-  var preloaded={};
-  var currentScene=tour.default.firstScene;
+  var TRANS = cfg.transitions || {};
+  var preloaded = {};
+  var currentScene = tour.default.firstScene;
+  var loadingScreen = document.getElementById('loading-screen');
+  var firstLoad = true;
+  var titleEl = document.getElementById('scene-title');
 
-  var sceneUrl={};
-  Object.keys(tour.scenes).forEach(function(k){
-    sceneUrl[k]=tour.scenes[k].panorama;
-  });
+  function sceneTitle(id){
+    return (tour.scenes[id] && tour.scenes[id].title) || id;
+  }
+  function setTitle(id){
+    titleEl.textContent = sceneTitle(id);
+  }
+  setTitle(currentScene);
 
-  // pill
-  var pill=document.getElementById('vr-pill');
-  var pillSpinner=pill.querySelector('.vr-pill-spin');
-  var pillText=pill.querySelector('.vr-pill-text');
-  var pillTimeout=null;
-
-  function showPill(loaded,total){
-    if(pillTimeout){clearTimeout(pillTimeout);pillTimeout=null;}
+  var pill = document.getElementById('vr-pill');
+  var pillSpinner = pill.querySelector('.vr-pill-spin');
+  var pillText = pill.querySelector('.vr-pill-text');
+  var pillTimeout = null;
+  function showPill(text){
+    if (pillTimeout){ clearTimeout(pillTimeout); pillTimeout = null; }
     pill.classList.remove('vr-pill-done','vr-pill-off');
-    pillSpinner.style.display='';
-    pillText.textContent=loaded+' / '+total;
+    pillSpinner.style.display = '';
+    pillText.textContent = text;
   }
-  function pillDone(total){
-    pillSpinner.style.display='none';
-    pillText.textContent=total+' / '+total;
-    pillTimeout=setTimeout(function(){pill.classList.add('vr-pill-done')},TRANS.pill&&TRANS.pill.fadeDelay||1000);
+  function pillDone(text){
+    pillSpinner.style.display = 'none';
+    pillText.textContent = text;
+    pillTimeout = setTimeout(function(){ pill.classList.add('vr-pill-done'); }, (TRANS.pill && TRANS.pill.fadeDelay) || 1000);
   }
-  function hidePill(){
-    if(pillTimeout){clearTimeout(pillTimeout);pillTimeout=null;}
-    pill.classList.add('vr-pill-off');
+
+  function fallbackUrls(sceneId){
+    var sc = tour.scenes[sceneId];
+    if (!sc || !sc.multiRes) return [];
+    var base = sc.multiRes.basePath || '';
+    var faces = ['f','b','u','d','l','r'];
+    var ext = sc.multiRes.extension || 'webp';
+    return faces.map(function(f){ return base + '/fallback/' + f + '.' + ext; });
+  }
+
+  function neighborIds(sceneId){
+    var spots = (tour.scenes[sceneId] || {}).hotSpots || [];
+    var ids = [];
+    spots.forEach(function(hs){
+      if (hs.type === 'scene' && hs.sceneId && ids.indexOf(hs.sceneId) === -1) ids.push(hs.sceneId);
+    });
+    return ids;
   }
 
   function preloadSceneTargets(sceneId){
-    var spots=(tour.scenes[sceneId]||{}).hotSpots||[];
-    var urls=[];
-    spots.forEach(function(hs){
-      if(hs.type==='scene'&&hs.sceneId){
-        var url=sceneUrl[hs.sceneId];
-        if(url&&!preloaded[url]) urls.push(url);
-      }
-    });
-    if(!urls.length) return;
-    var total=urls.length,loaded=0;
-    showPill(0,total);
-    urls.forEach(function(url){
-      var img=new Image();
-      img.onload=img.onerror=function(){
-        preloaded[url]=true;
-        loaded++;
-        if(loaded===total) pillDone(total); else showPill(loaded,total);
-      };
-      img.src=url;
-    });
-  }
-
-  // flash transition
-  var flashEl=document.getElementById('vr-flash');
-  function flash(){
-    if(flashEl.classList.contains('on')) return;
-    flashEl.classList.add('on');
-    requestAnimationFrame(function(){
-      flashEl.classList.remove('on');
-    });
-  }
-
-  v.on('load',function(){
-    preloadSceneTargets(currentScene);
-  });
-
-  v.on('scenechange',function(id){
-    currentScene=id;
-    hidePill();
-    flash();
-  });
-
-  // kick off first scene
-  preloadSceneTargets(currentScene);
-
-  // ── Nadir logo (in‑scene, scales with zoom) ──
-  var NADIR=cfg.nadirLogo||{};
-
-  function computeNadirSize(){
-    var vw=window.innerWidth;
-    var pct=NADIR.viewportPercent||12;
-    var min=NADIR.minSize||60;
-    var max=NADIR.maxSize||200;
-    return Math.round(Math.max(min,Math.min(max,vw*pct/100)));
-  }
-
-  // add nadir hotspot to every scene
-  Object.keys(tour.scenes).forEach(function(sid){
-    try{v.addHotSpot({pitch:-90,yaw:0,type:'info',cssClass:'nadir-logo',scale:true},sid)}catch(e){}
-  });
-
-  // inject logo img whenever a .nadir-logo hotspot appears in DOM
-  new MutationObserver(function(ms){
-    ms.forEach(function(m){
-      m.addedNodes.forEach(function(n){
-        if(n.nodeType!==1||!n.classList||!n.classList.contains('nadir-logo')||n.classList.contains('nadir-done')) return;
-        n.classList.add('nadir-done');
-        var img=document.createElement('img');
-        img.src=NADIR.src||'logo.png';
-        var sz=computeNadirSize();
-        img.width=sz;
-        img.height=sz;
-        img.style.opacity=NADIR.opacity!=null?NADIR.opacity:0.75;
-        img.style.filter='drop-shadow(0 2px 8px rgba(0,0,0,0.45))';
-        n.appendChild(img);
-        updateNadirScale();
+    var urls = [];
+    neighborIds(sceneId).forEach(function(id){
+      fallbackUrls(id).forEach(function(url){
+        if (!preloaded[url]) urls.push(url);
       });
     });
-  }).observe(document.getElementById('panorama'),{childList:true,subtree:true});
+    if (!urls.length) return;
+    var total = urls.length, loaded = 0;
+    showPill('Warming next rooms…');
+    urls.forEach(function(url){
+      var img = new Image();
+      img.onload = img.onerror = function(){
+        preloaded[url] = true;
+        loaded++;
+        if (loaded === total) pillDone('Ready');
+      };
+      img.src = url;
+    });
+  }
 
-  v.on('load',function(){
+  function onViewerLoad(){
+    if (firstLoad){
+      firstLoad = false;
+      loadingScreen.classList.add('hidden');
+    } else {
+      pill.classList.add('vr-pill-off');
+    }
+    setTitle(currentScene);
+    markCurrent(currentScene);
+    preloadSceneTargets(currentScene);
     updateNadirScale();
+  }
+  v.on('load', onViewerLoad);
+
+  v.on('scenechange', function(id){
+    currentScene = id;
+    setTitle(id);
+    markCurrent(id);
+    showPill('Loading…');
   });
 
-  v.on('zoomchange',function(){
-    updateNadirScale();
+  // Room list
+  var menuBtn = document.getElementById('menu-btn');
+  var menuPanel = document.getElementById('menu-panel');
+  var menuList = document.getElementById('menu-list');
+  var menuClose = document.getElementById('menu-close');
+  var menuBackdrop = document.getElementById('menu-backdrop');
+
+  function renderMenu(){
+    var html = '';
+    (tour.menu || []).forEach(function(group){
+      html += '<div class="menu-group">'+group.name+'</div>';
+      group.scenes.forEach(function(item){
+        html += '<button class="menu-item" type="button" data-scene="'+item.id+'">'+item.title+'</button>';
+      });
+    });
+    menuList.innerHTML = html;
+  }
+  function markCurrent(id){
+    if (!menuList) return;
+    menuList.querySelectorAll('.menu-item').forEach(function(btn){
+      btn.classList.toggle('current', btn.getAttribute('data-scene') === id);
+    });
+  }
+  function openMenu(){
+    menuPanel.classList.add('open');
+    menuBackdrop.classList.add('open');
+    menuBackdrop.hidden = false;
+    menuBtn.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    menuPanel.classList.remove('open');
+    menuBackdrop.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+  }
+  renderMenu();
+  markCurrent(currentScene);
+  menuBtn.addEventListener('click', function(){
+    if (menuPanel.classList.contains('open')) closeMenu(); else openMenu();
+  });
+  menuClose.addEventListener('click', closeMenu);
+  menuBackdrop.addEventListener('click', closeMenu);
+  menuList.addEventListener('click', function(e){
+    var btn = e.target.closest('.menu-item');
+    if (!btn) return;
+    var id = btn.getAttribute('data-scene');
+    if (id && tour.scenes[id]) v.loadScene(id);
+    closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeMenu();
   });
 
-  window.addEventListener('resize',function(){
-    var sz=computeNadirSize();
+  // Nadir logo
+  var NADIR = cfg.nadirLogo || {};
+  function computeNadirSize(){
+    var vw = window.innerWidth;
+    var pct = NADIR.viewportPercent || 12;
+    var min = NADIR.minSize || 60;
+    var max = NADIR.maxSize || 200;
+    return Math.round(Math.max(min, Math.min(max, vw * pct / 100)));
+  }
+  Object.keys(tour.scenes).forEach(function(sid){
+    try { v.addHotSpot({pitch:-90,yaw:0,type:'info',cssClass:'nadir-logo',scale:true,text:''}, sid); } catch (e) {}
+  });
+  function injectNadir(n){
+    if (!n || n.nodeType !== 1 || !n.classList || !n.classList.contains('nadir-logo') || n.classList.contains('nadir-done')) return;
+    n.classList.add('nadir-done');
+    var img = document.createElement('img');
+    img.src = NADIR.src || 'logo.webp';
+    img.alt = '';
+    var sz = computeNadirSize();
+    img.width = sz;
+    img.height = sz;
+    img.style.opacity = NADIR.opacity != null ? NADIR.opacity : 0.75;
+    img.style.filter = 'drop-shadow(0 2px 8px rgba(0,0,0,0.45))';
+    n.appendChild(img);
+    updateNadirScale();
+  }
+  document.querySelectorAll('.nadir-logo').forEach(injectNadir);
+  new MutationObserver(function(ms){
+    ms.forEach(function(m){
+      m.addedNodes.forEach(injectNadir);
+    });
+  }).observe(document.getElementById('panorama'), {childList:true, subtree:true});
+
+  function updateNadirScale(){
+    var hfov = v.getHfov();
+    var baseHfov = (tour.scenes[currentScene] || {}).hfov || tour.default.hfov || 100;
+    var sc = baseHfov / hfov;
+    var img = document.querySelector('.nadir-logo img');
+    if (img) img.style.transform = 'translate(-50%,-50%) scale('+sc+')';
+  }
+  v.on('zoomchange', updateNadirScale);
+  window.addEventListener('resize', function(){
+    var sz = computeNadirSize();
     document.querySelectorAll('.nadir-logo img').forEach(function(img){
-      img.width=sz;
-      img.height=sz;
+      img.width = sz;
+      img.height = sz;
     });
     updateNadirScale();
   });
 
-  function updateNadirScale(){
-    var hfov=v.getHfov();
-    var baseHfov=(tour.scenes[currentScene]||{}).hfov||tour.default.hfov||100;
-    var s=baseHfov/hfov;
-    var img=document.querySelector('.nadir-logo img');
-    if(img) img.style.transform='translate(-50%,-50%) scale('+s+')';
-  }
+  // Tiles can finish during pannellum.viewer(), before listeners were attached.
+  if (typeof v.isLoaded === 'function' && v.isLoaded()) onViewerLoad();
 });
 </script>
 </body>
